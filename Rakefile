@@ -9,7 +9,7 @@ namespace :dotfiles do
   task :install do
     install_oh_my_zsh
     replace_all = false
-    files = Dir['*'] - %w[Rakefile README.rdoc LICENSE oh-my-zsh]
+    files = Dir['*'] - %w[Rakefile README.md LICENSE oh-my-zsh]
     files << "oh-my-zsh/custom/stevepsharpe.zsh"
     files.each do |file|
       next if %w[Rakefile README.markdown oh-my-zsh].include? file

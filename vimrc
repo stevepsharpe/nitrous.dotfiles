@@ -16,7 +16,6 @@ endif
 " required for vundle
 filetype off
 
-
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -57,6 +56,13 @@ Bundle 'mattn/gist-vim'
 
 Bundle 'chriskempson/base16-vim'
 Bundle 'kchmck/vim-coffee-script.git'
+Bundle 'bling/vim-airline'
+Bundle 'edkolev/tmuxline.vim'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'chriskempson/tomorrow-theme'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'tComment'
+Bundle 'tpope/vim-unimpaired'
 
 " Installing plugins the first time
 if iCanHazVundle == 0
@@ -78,6 +84,13 @@ set shiftwidth=2
 let mapleader = ','
 let maplocalleader = '\'
 
+map <Leader>i mmgg=G`m<CR>
+map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+
+let g:airline_theme = 'jellybeans'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
 " always show status bar
 set ls=2
 
@@ -88,6 +101,10 @@ set autoread
 set history=1000
 set backspace=indent,eol,start
 set ruler
+
+set autoindent
+set nowrap
+set showmatch
 
 " incremental search
 set incsearch
@@ -102,6 +119,7 @@ set smartcase
 " line numbers
 set relativenumber
 set numberwidth=5
+set cursorline
 
 " toggle Tagbar display
 map <F4> :TagbarToggle<CR>
@@ -142,7 +160,8 @@ ca w!! w !sudo tee "%"
 set pastetoggle=<leader>p
 
 " CtrlP (new fuzzy finder)
-let g:ctrlp_map = ',e'
+let g:ctrlp_map = '<Leader>t'
+nmap ; :CtrlPBuffer<CR>
 nmap ,g :CtrlPBufTag<CR>
 nmap ,G :CtrlPBufTagAll<CR>
 nmap ,f :CtrlPLine<CR>
@@ -169,13 +188,15 @@ let g:tabman_toggle = 'tl'
 let g:tabman_focus  = 'tf'
 
 " use 256 colors when possible
-if &term =~? 'mlterm\|xterm\|screen-256'
+if &term =~? 'mlterm\|xterm\|screen-256\|xterm-256color'
   let &t_Co = 256
   " color
-  set background=dark
-  let base16colorspace=256
-  colorscheme base16-eighties
 end
+
+  set background=dark
+  colorscheme jellybeans
+"  colorscheme Tomorrow-Night-Eighties
+"set color Tomorrow-Night-Eighties
 
 " when scrolling, keep cursor 3 lines away from screen border
 set scrolloff=3
@@ -213,3 +234,4 @@ map <Leader>sc :RScontroller
 map <Leader>sv :RSview 
 map <Leader>su :RSunittest 
 map <Leader>sf :RSfunctionaltest 
+
