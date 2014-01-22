@@ -71,6 +71,8 @@ if iCanHazVundle == 0
     :BundleInstall
 endif
 
+syntax enable
+
 " allow plugins by file type
 filetype plugin on
 filetype indent on
@@ -90,6 +92,8 @@ map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 let g:airline_theme = 'jellybeans'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+
+let g:tmuxline_preset = 'powerline'
 
 " always show status bar
 set ls=2
@@ -195,8 +199,6 @@ end
 
   set background=dark
   colorscheme jellybeans
-"  colorscheme Tomorrow-Night-Eighties
-"set color Tomorrow-Night-Eighties
 
 " when scrolling, keep cursor 3 lines away from screen border
 set scrolloff=3
