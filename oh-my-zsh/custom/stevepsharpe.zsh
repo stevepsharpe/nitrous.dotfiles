@@ -6,8 +6,14 @@ alias gd='git diff'
 alias go='git checkout '
 alias gk='gitk --all&'
 alias gx='gitx --all'
+
 alias ll='ls -alF --group-directories-first'
 alias la='ls -A'
 alias l='ls -CF'
+
+alias rc='rails c'
+alias rs='rails s'
+alias rg='rails g'
+alias rdm='rake db:migrate db:test:prepare'
 
 export TERM="xterm-256color"
