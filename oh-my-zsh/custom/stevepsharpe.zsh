@@ -16,4 +16,7 @@ alias rs='rails s'
 alias rg='rails g'
 alias rdm='rake db:migrate db:test:prepare'
 
+alias ta='t attach -t'
+alias tn='t new -s'
+
 export TERM="xterm-256color"
