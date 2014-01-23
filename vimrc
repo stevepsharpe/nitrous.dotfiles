@@ -63,6 +63,8 @@ Bundle 'chriskempson/tomorrow-theme'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'tComment'
 Bundle 'tpope/vim-unimpaired'
+" Syntastic
+Bundle 'scrooloose/syntastic'
 
 " Installing plugins the first time
 if iCanHazVundle == 0
