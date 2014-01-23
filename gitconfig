@@ -5,6 +5,7 @@
   user = stevepsharpe
 [push]
   simple
+	default = simple
 [color]
     interactive = auto
     ui = auto
