@@ -98,6 +98,9 @@ let g:tmuxline_preset = 'powerline'
 " always show status bar
 set ls=2
 
+" Tell vim to shut up
+set visualbell
+
 " backup and noswap
 set noswapfile
 set nobackup
